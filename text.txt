@@ -1,0 +1,3 @@
+defination :- (Html) stands for hyper text markup language 
+its a standared language for building the applications 
+defination :- (css) stands for cascading style sheets this is used for stying the webpage 
