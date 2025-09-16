@@ -1,3 +1,6 @@
 defination :- (Html) stands for hyper text markup language 
 its a standared language for building the applications 
 defination :- (css) stands for cascading style sheets this is used for stying the webpage 
+
+
+defination:-(symantic tags) the name it self conatains the meaning is called as a symantic tags
