@@ -4,3 +4,25 @@ defination :- (css) stands for cascading style sheets this is used for stying th
 
 
 defination:-(symantic tags) the name it self conatains the meaning is called as a symantic tags
+
+task1:-
+symantic tags like header,main,section,footer
+
+tribute page 
+
+h1==>header
+main==>5 section tags 
+1 image 
+2 content about the person
+3 from for taking data from the user 
+4 video of the person 
+5 include one youtube video of that person
+footer ==> copyrights 
+
+
+selectors 
+four types of selectors 
+1.universal selector (*)
+2.id selector(#)
+3.class selector(.)
+4.element selector(tag name)
