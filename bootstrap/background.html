@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root{
+            --primary-color:rgb(14, 71, 71);
+            --secondary-color:rgb(63, 39, 39);
+            --border-radius:8px;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: var(--primary-color);
+            line-height: 1.6;
+        }
+        section{
+            position: relative;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        section video{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            transform: translate(-50%,-50%);
+            object-fit: cover;
+        }
+        section h1{
+            font-size: 24px;
+            background: rgba(192, 164, 164, 0.2);
+            padding: 15px 20px;
+            border-radius: var(--border-radius);
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <video src="./videos/203260-920602949_medium.mp4" autoplay  muted loop playsinline></video>
+        <h1>welcome to the section1</h1>
+    </section>
+    <section>
+        <video src="./videos/3132-166335897_medium.mp4"  autoplay  muted loop playsinline></video>
+        <h1>explore section 2</h1>
+    </section>
+    <section>
+        <video src="./videos/215751.mp4"  autoplay  muted loop playsinline></video>
+        explore section 3
+    </section>
+</body>
+</html>
