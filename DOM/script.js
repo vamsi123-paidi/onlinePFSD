@@ -27,7 +27,7 @@
 // })
 
 
-const data = document.querySelector("h1");
+// const data = document.querySelector("h1");
 
 // data.textContent = "this is a js written text"
 // data.innerHTML = "<p>this is an inner html content </p>"
@@ -38,14 +38,80 @@ const data = document.querySelector("h1");
 // newDiv.setAttribute("class","newDiv")
 // main.appendChild(newDiv)
 
-const anchorTag = document.getElementById("anchorTag")
+// const anchorTag = document.getElementById("anchorTag")
 
-const attr=anchorTag.getAttribute("href")
-console.log(attr)
+// const attr=anchorTag.getAttribute("href")
+// console.log(attr)
 
-anchorTag.setAttribute("href","https://www.flipkart.com/")
+// anchorTag.setAttribute("href","https://www.flipkart.com/")
 
-const card = document.getElementById("card")
-card.innerHTML=`<img src="../images/download.jpeg" alt="image">
-       <h1>Title</h1>
-       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos distinctio reiciendis ab illum laboriosam? Sapiente facilis provident fugit in. Dicta quas veniam ex minus modi quo natus quasi, sed possimus.</p>`
+// const card = document.getElementById("card")
+// card.innerHTML=`<img src="../images/download.jpeg" alt="image">
+//        <h1>Title</h1>
+//        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos distinctio reiciendis ab illum laboriosam? Sapiente facilis provident fugit in. Dicta quas veniam ex minus modi quo natus quasi, sed possimus.</p>`
+
+
+// event handling (click,doubleClick,hover,submit etc.,.)
+
+// const submit = document.getElementById("submit")
+// const sampleDiv = document.getElementById("sampleDiv")
+// submit.addEventListener("click",()=>{
+//    sampleDiv.innerHTML="<p>this is added after clicking the button </p>"    
+// })
+
+
+// const lightmode = document.getElementById("lightmode")
+// const darkmode = document.getElementById("darkmode")
+
+// lightmode.addEventListener("dblclick",()=>{
+//        document.body.style.backgroundColor="white"
+//        document.body.style.color="black"
+
+// })
+// darkmode.addEventListener("mouseover",()=>{
+//        document.body.style.backgroundColor="black"
+//        document.body.style.color="white"
+// })
+
+
+// form handling 
+// task form need to contain username,emailid,age,password after submit it need to be print in the table 
+const formSample = document.getElementById("formSample")
+const output = document.getElementById("output")
+
+formSample.addEventListener("submit",(e)=>{
+const username = document.getElementById("username").value
+const email = document.getElementById("email").value
+const age = document.getElementById("age").value
+const password = document.getElementById("password").value
+
+       e.preventDefault()
+       // console.log(inputVal)
+       output.innerHTML=`
+       <table border=1>
+              <tr>
+              <th>user</th>
+              <th>email</th>
+              <th>age</th>
+              <th>password</th>
+              </tr>
+              <tr>
+              <td>${username}</td>
+              <td>${email}</td>
+              <td>${age}</td>
+              <td>${password}</td>
+              </tr>
+       </table>
+       
+       `
+})
+
+
+
+
+
+
+
+
+
+
