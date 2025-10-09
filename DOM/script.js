@@ -76,40 +76,82 @@
 
 // form handling 
 // task form need to contain username,emailid,age,password after submit it need to be print in the table 
-const formSample = document.getElementById("formSample")
-const output = document.getElementById("output")
+// const formSample = document.getElementById("formSample")
+// const output = document.getElementById("output")
 
-formSample.addEventListener("submit",(e)=>{
-const username = document.getElementById("username").value
-const email = document.getElementById("email").value
-const age = document.getElementById("age").value
-const password = document.getElementById("password").value
+// formSample.addEventListener("submit",(e)=>{
+// const username = document.getElementById("username").value
+// const email = document.getElementById("email").value
+// const age = document.getElementById("age").value
+// const password = document.getElementById("password").value
 
-       e.preventDefault()
-       // console.log(inputVal)
-       output.innerHTML=`
-       <table border=1>
-              <tr>
-              <th>user</th>
-              <th>email</th>
-              <th>age</th>
-              <th>password</th>
-              </tr>
-              <tr>
-              <td>${username}</td>
-              <td>${email}</td>
-              <td>${age}</td>
-              <td>${password}</td>
-              </tr>
-       </table>
+//        e.preventDefault()
+//        // console.log(inputVal)
+//        output.innerHTML=`
+//        <table border=1>
+//               <tr>
+//               <th>user</th>
+//               <th>email</th>
+//               <th>age</th>
+//               <th>password</th>
+//               </tr>
+//               <tr>
+//               <td>${username}</td>
+//               <td>${email}</td>
+//               <td>${age}</td>
+//               <td>${password}</td>
+//               </tr>
+//        </table>
        
-       `
-})
+//        `
+// })
+
+// const passwordInput = document.getElementById('userPassword');
+//   const hint = document.getElementById('passwordHint');
+
+//   passwordInput.addEventListener('input', () => {
+//     const pass = passwordInput.value;
+
+//     if (pass.length < 8) {
+//       hint.textContent = "Too short! (Need 8+ letters)";
+//       hint.style.color = "red";
+//     } 
+//     else if (!/[A-Z]/.test(pass)) {
+//       hint.textContent = "Add a CAPITAL letter!";
+//       hint.style.color = "orange";
+//     }
+//     else {
+//       hint.textContent = "Perfect!";
+//       hint.style.color = "green";
+//     }
+//   });
 
 
+function checkPasswordStrength() {
+    const password = document.getElementById('password').value;
+    const bar = document.getElementById('strengthBar');
+    const text = document.getElementById('strengthText');
+    
+    let strength = 0;
+    if (password.length > 0) strength += 20;
+    if (password.length >= 8) strength += 30;
+    if (/[A-Z]/.test(password)) strength += 20;
+    if (/[0-9]/.test(password)) strength += 20;
+    if (/[^A-Za-z0-9]/.test(password)) strength += 10;
 
-
-
+    bar.style.width = strength + '%';
+    
+    if (strength < 50) {
+      bar.style.backgroundColor = 'red';
+      text.textContent = 'Strength: Weak';
+    } else if (strength < 80) {
+      bar.style.backgroundColor = 'orange';
+      text.textContent = 'Strength: Medium';
+    } else {
+      bar.style.backgroundColor = 'green';
+      text.textContent = 'Strength: Strong!';
+    }
+  }
 
 
 
