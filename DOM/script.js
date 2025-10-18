@@ -127,31 +127,116 @@
 //   });
 
 
-function checkPasswordStrength() {
-    const password = document.getElementById('password').value;
-    const bar = document.getElementById('strengthBar');
-    const text = document.getElementById('strengthText');
+// function checkPasswordStrength() {
+//     const password = document.getElementById('password').value;
+//     const bar = document.getElementById('strengthBar');
+//     const text = document.getElementById('strengthText');
     
-    let strength = 0;
-    if (password.length > 0) strength += 20;
-    if (password.length >= 8) strength += 30;
-    if (/[A-Z]/.test(password)) strength += 20;
-    if (/[0-9]/.test(password)) strength += 20;
-    if (/[^A-Za-z0-9]/.test(password)) strength += 10;
+//     let strength = 0;
+//     if (password.length > 0) strength += 20;
+//     if (password.length >= 8) strength += 30;
+//     if (/[A-Z]/.test(password)) strength += 20;
+//     if (/[0-9]/.test(password)) strength += 20;
+//     if (/[^A-Za-z0-9]/.test(password)) strength += 10;
 
-    bar.style.width = strength + '%';
+//     bar.style.width = strength + '%';
     
-    if (strength < 50) {
-      bar.style.backgroundColor = 'red';
-      text.textContent = 'Strength: Weak';
-    } else if (strength < 80) {
-      bar.style.backgroundColor = 'orange';
-      text.textContent = 'Strength: Medium';
-    } else {
-      bar.style.backgroundColor = 'green';
-      text.textContent = 'Strength: Strong!';
+//     if (strength < 50) {
+//       bar.style.backgroundColor = 'red';
+//       text.textContent = 'Strength: Weak';
+//     } else if (strength < 80) {
+//       bar.style.backgroundColor = 'orange';
+//       text.textContent = 'Strength: Medium';
+//     } else {
+//       bar.style.backgroundColor = 'green';
+//       text.textContent = 'Strength: Strong!';
+//     }
+//   }
+
+
+//////fetch method example
+
+// const FetchData = async ()=>{
+//   try{
+//     const response =await fetch("https://jsonplaceholder.typicode.com/users/1")
+//     const data = await response.json()
+//     console.log(data)
+//     const userData = document.getElementById("userData")
+
+//     userData.innerHTML = `
+//       <h3>${data.name}</h3>
+//       <p>${data.email}</p>
+//       <p>${data.phone}</p>
+//     `
+//   }catch(error){
+//     console.error("Fetching unsucessful",error)
+//   }
+// }
+
+// document.getElementById("fetchBtn").addEventListener("click",FetchData)
+
+
+// const FetchData = async ()=>{
+//   try{
+//     const response =await fetch("https://jsonplaceholder.typicode.com/users")
+//     const data = await response.json()
+//     console.log(data)
+//     const userData = document.getElementById("userData")
+
+//     userData.innerHTML = '';
+
+//     data.forEach((data) => {
+//       const division = document.createElement('div');
+//       division.classList.add("userCard");
+
+//       division.innerHTML = `
+//       <h3>${data.name}</h3>
+//       <p>${data.email}</p>
+//       <p>${data.phone}</p>
+//     `
+//     userData.appendChild(division)
+
+//     });
+    
+//   }catch(error){
+//     console.error("Fetching unsucessful",error)
+//   }
+// }
+
+// document.getElementById("fetchBtn").addEventListener("click",FetchData)
+
+
+const fetchData = async ()=>{
+    const inputVal = document.getElementById("userId")
+    const id = inputVal.value
+    const userData = document.getElementById("userData");
+    userData.innerHTML = "";
+    if(!id){
+      userData.innerHTML = `<p> Please enter the userId</p>`
     }
-  }
+    try{
+      const response = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
+      if(!response.ok){
+        userData.innerHTML= `<p> user not found</p>`
+      }
+      const data =await response.json();
+      const div = document.createElement('div');
+      div.classList.add('userCard');
+      userData.innerHTML = `
+      <h3>${data.name}</h3>
+      <p>${data.email}</p>
+      <p>${data.phone}</p>
+      `
+      userData.appendChild(div)
+    }catch(err){
+      console.error(err);
+      userData.innerHTML= `<p>failed to fetch</p>`
+    }
+}
+
+document.getElementById("fetchBtn").addEventListener("click",fetchData)
+
+
 
 
 
