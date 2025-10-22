@@ -94,3 +94,7 @@ function createUser(name) {
 
 const user1 = createUser("Alice");
 user1.sayName(); // Hello, Alice
+
+
+Get-ExecutionPolicy 
+Set-ExecutionPolicy RemoteSigned
