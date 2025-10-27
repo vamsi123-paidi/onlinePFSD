@@ -1,10 +1,10 @@
 import Card from "./Card"
 
-function About(){
+function About({obj}){
     return(
         <>
             <h1>this is about page data</h1>
-            <Card/>
+            <Card obj={obj}/>
         </>
     )
 }
