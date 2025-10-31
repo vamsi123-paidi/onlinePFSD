@@ -8,6 +8,7 @@ const GrandChild = ({ obj }) => {
     }
   return (
     <>
+      <img src={obj?.image} alt={obj.name} />
         <p style={style} >this is {obj.name} my age is {obj.age}</p>
     </>
   )
