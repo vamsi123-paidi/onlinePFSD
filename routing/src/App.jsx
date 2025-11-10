@@ -13,26 +13,11 @@ import Dashboard from './pages/Dashboard';
 import Profile from './pages/Profile';
 import Settings from './pages/Settings';
 import PageNotFound from './pages/PageNotFound';
+import Fetch from './pages/Fetch';
 const App = () => {
   return (
     <>
-      <BrowserRouter>
-        <NavbarComp />
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/about' element={<About />} />
-          <Route path='/skills' element={<Skills />} />
-          <Route path='/projects' element={<Projects />} />
-          <Route path='/contact' element={<Contact />} />
-          <Route path='/login' element={<Login/>}/>
-          <Route path='/user/:id' element={<ProfilePage/>}/>
-          <Route path='/dashboard' element={<Dashboard/>}>
-            <Route path='profile' element={<Profile/>}/> 
-            <Route path='settings' element={<Settings/>}/> 
-          </Route>
-          <Route path='*' element={<PageNotFound/>}/> 
-        </Routes>
-      </BrowserRouter>
+     <Fetch/>
     </>
   )
 }
