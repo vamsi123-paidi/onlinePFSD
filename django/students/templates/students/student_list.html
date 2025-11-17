@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>students list</title>
+    </head>
+    <body>
+        <h1>Students</h1>
+        <ul>
+            {% for s in students %}
+            <li>{{s.name}}-{{s.age}}- {{s.course}}-{{s.joined}}</li>
+            {%empty%}
+            <li>No students yet</li>
+            {%endfor%}
+        </ul>
+    </body>
+</html>
