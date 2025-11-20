@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Django Demo</title>
+</head>
+<body>
+    <h1>Django Demo Site</h1>
+    <hr>
+
+    <ul>
+        <li><a href="{% url 'students:ti_home' %}">Homepage</a></li>
+        <li><a href="{% url 'students:ti_about' %}">Aboutpage</a></li>
+        <li><a href="{% url 'students:sucess_msg' %}">Success Page</a></li>
+        <li><a href="{% url 'students:err_msg' %}">Error Page</a></li>
+
+        {% if user.is_authenticated %}
+            <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+            <li><a href="{% url 'logout' %}">Logout ({{ user.username }})</a></li>
+        {% else %}
+            <li><a href="{% url 'login' %}">Login</a></li>
+            <li><a href="{% url 'register' %}">Register</a></li>
+        {% endif %}
+    </ul>
+
+    <hr>
+
+    {% if messages %}
+        {% for message in messages %}
+            <p style="color: {% if message.tags == 'error' %}red{% else %}green{% endif %};">
+                {{ message }}
+            </p>
+        {% endfor %}
+    {% endif %}
+
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

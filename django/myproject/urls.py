@@ -17,8 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.urls import include
+from students import views as student_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('students/',include('students.urls'))
+    path('students/',include('students.urls')),
+     path('auth/register/', student_views.register_view, name="register"),
+    path('auth/login/', student_views.login_view, name="login"),
+    path('auth/logout/', student_views.logout_view, name="logout"),
+    path('auth/dashboard/', student_views.dashboard_view, name="dashboard"),
 ]
